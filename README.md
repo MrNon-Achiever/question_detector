@@ -1,0 +1,2 @@
+# question_detector
+训练针对中国高中数学题目的yolo识别模型
