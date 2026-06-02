@@ -5,12 +5,12 @@ from pathlib import Path
 
 # --- 1. 加载您训练好的模型 ---
 # 路径和您日志中显示的一致
-MODEL_PATH = 'models/pastpaper_detector_demo/weights/best.pt'
+MODEL_PATH = 'runs\detect\models\gaokao_detector\weights\best.pt'
 model = YOLO(MODEL_PATH)
 
 # --- 2. 指定您要测试的图片路径 ---
 # 把它换成您准备好的那张新图片的实际路径
-test_image_path = "data/raw_images/9709_s20_qp_11/page_5.png"
+test_image_path = "data\gaokao_dataset\images\2023_sh_autumn_p05.jpg"
 
 # --- 3. 进行推理并可视化结果 ---
 if not Path(test_image_path).exists():
@@ -31,6 +31,6 @@ else:
             cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
     # 将画好框的图片保存下来
-    output_path = "croptest/prediction_result.png"
+    output_path = "predict/prediction_result.png"
     cv2.imwrite(output_path, img)
     print(f"✅ Prediction result saved to {output_path}. Go and check it out!")

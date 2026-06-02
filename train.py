@@ -11,7 +11,7 @@ def main():
         epochs=80,  # 对于小数据集，80轮通常足够
         imgsz=640,
         project='models', # 将训练结果保存在 models/ 文件夹下
-        name='pastpaper_detector_demo'
+        name='gaokao_detector'
     )
 
 if __name__ == '__main__':
